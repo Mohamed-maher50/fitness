@@ -1,4 +1,17 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "api.exercisedb.io",
+      },
+    ],
 
-module.exports = nextConfig
+    // sets the Content-Disposition header (inline or attachment)
+
+    domains: ["edb-4rme8.ondigitalocean.app", "localhost"],
+  },
+};
+
+module.exports = nextConfig;
