@@ -1,3 +1,4 @@
+"use client";
 import React, { FC, Suspense } from "react";
 import Title from "./Title";
 
@@ -7,7 +8,7 @@ import { exercise } from "@/types";
 interface Props {
   exercises: exercise[];
 }
-const Exercises: FC<Props> = async ({ exercises }) => {
+const Exercises: FC<Props> = ({ exercises }) => {
   return (
     <section className="  pt-7 ">
       <div className="flex flex-wrap  flex-1 gap-y-5 container mx-auto">

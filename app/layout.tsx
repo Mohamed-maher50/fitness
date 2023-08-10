@@ -3,6 +3,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Footer from "@/components/Footer";
+import Provider from "@/components/Provider";
+import ProtectRoute from "@/utils/Protect";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,10 +20,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-theme="mytheme">
-      <body className={"bg-[#0C0C0D] min-h-screen"}>
-        <Nav />
-        {children}
-        <Footer />
+      <body className={"bg-[#0C0C0D] min-h-screen "}>
+        <Provider>
+          <Nav />
+
+          {children}
+          <Footer />
+        </Provider>
       </body>
     </html>
   );

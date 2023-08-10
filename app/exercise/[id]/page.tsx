@@ -1,7 +1,6 @@
-import ExerciseCard from "@/components/ExerciseCard";
 import { getExerciseById } from "@/utils/Exercise";
 import Image from "next/image";
-import React, { FC, Suspense } from "react";
+import React, { FC } from "react";
 interface Props {
   params: { id: string };
   searchParams: object;

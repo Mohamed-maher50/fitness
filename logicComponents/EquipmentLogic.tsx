@@ -34,7 +34,7 @@ const Test = () => {
         <Combobox.Input
           as={"input"}
           className={
-            "w-full p-2 py-2 mb-5 rounded-sm  outline-none h-full sticky top-0 text-sm leading-5 text-gray-500 font-bold focus:ring-0"
+            "w-full p-2 py-2 rounded-sm  outline-none h-full sticky top-0 text-sm leading-5 text-gray-500 font-bold focus:ring-0"
           }
           placeholder="Search"
           onChange={(event) => setQuery(event.target.value)}

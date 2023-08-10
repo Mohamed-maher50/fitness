@@ -1,9 +1,10 @@
-import ExerciseCard from "@/components/ExerciseCard";
 import Exercises from "@/components/Exercises";
 import Pagination from "@/components/Pagination";
 import MusclesLogic from "@/logicComponents/MusclesLogic";
 import { exercise } from "@/types";
 import { getMuscles } from "@/utils/muscles";
+
+import { getServerSession } from "next-auth";
 import React, { FC } from "react";
 interface Props {
   params: { id: string };
@@ -12,9 +13,12 @@ interface Props {
     query: string | undefined;
   };
 }
+
 let muscles: exercise[] | undefined = undefined;
 let lastFilter: string | undefined;
 const page: FC<Props> = async ({ searchParams }) => {
+  const session = await getServerSession();
+  console.log(session);
   if (lastFilter == undefined || lastFilter != searchParams.query) {
     lastFilter = searchParams.query;
     muscles = await getMuscles(searchParams.query);

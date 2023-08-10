@@ -1,0 +1,110 @@
+.flex {
+  display: "flex";
+}
+.gap-3 {
+  gap: 10px;
+}
+.p-2 {
+  padding: 3px;
+}
+.pagination {
+  display: flex;
+  column-gap: 5px;
+}
+.pagination * {
+  box-sizing: border-box;
+}
+.pagination span,
+button {
+  font-family: sans-serif;
+  cursor: pointer;
+  font-weight: bold;
+}
+.pagination button:disabled {
+  cursor: not-allowed;
+}
+
+.pagination button.btn {
+  background: transparent;
+  padding: 4px 10px;
+  text-transform: capitalize;
+  border-radius: 3px;
+  border: 0px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+.pagination span {
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  min-width: 25px;
+  min-height: 30px;
+  text-align: center;
+  display: inline-block;
+}
+
+/* button theme  dark */
+.pagination.dark button:disabled {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+.pagination.dark.outline button:disabled {
+  background-color: transparent;
+  outline: 1px solid #333;
+}
+/* ///////// buttons */
+
+/* span theme dark */
+.pagination.dark span {
+  padding: 5px;
+  background-color: rgb(22, 22, 22);
+  color: white;
+}
+.pagination.dark.outline span {
+  padding: 5px;
+  background-color: transparent;
+  color: black;
+  outline: 2px solid #1b1b1b;
+}
+.pagination.dark span.active {
+  background-color: orange;
+  color: white;
+}
+/* //// span */
+
+/*  button theme primary */
+.pagination button.btn-primary {
+  background-color: rgb(5, 134, 255);
+  color: white;
+}
+/* span depend on style */
+.pagination.circle span {
+  border-radius: 200px;
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  -ms-border-radius: 200px;
+  -o-border-radius: 200px;
+  cursor: pointer;
+}
+
+.pagination.pop span.active {
+  transform: translateY(-6px);
+  transform-origin: bottom;
+  transition: transform 1s ease-in-out;
+  -webkit-transition: transform 0.3s ease-in-out;
+  -moz-transition: transform 0.3s ease-in-out;
+  -ms-transition: transform 1s ease-in-out;
+  -o-transition: transform 1s ease-in-out;
+  -webkit-transform: translateY(-6px);
+  -moz-transform: translateY(-6px);
+  -ms-transform: translateY(-6px);
+  -o-transform: translateY(-6px);
+}
+.pagination span.active {
+  background-color: orchid;
+}

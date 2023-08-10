@@ -3,8 +3,11 @@ import Exercises from "@/components/Exercises";
 import Pagination from "@/components/Pagination";
 import Title from "@/components/Title";
 import Test from "@/logicComponents/EquipmentLogic";
+import { User } from "@/models/User";
 import { Equipment } from "@/types";
 import { getEquipment } from "@/utils/Equipment";
+import { getServerSession } from "next-auth/next";
+
 import React, { FC, Suspense } from "react";
 interface Props {
   params: {};
@@ -16,6 +19,9 @@ interface Props {
 let currentQuery: undefined | string = undefined;
 let equipment: Equipment[] | undefined = [];
 const page: FC<Props> = async ({ searchParams }) => {
+  const session = await getServerSession();
+  console.log(session);
+
   if (currentQuery != searchParams.query) {
     currentQuery = searchParams.query;
     equipment = await getEquipment(searchParams.query);
