@@ -14,6 +14,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "lh3.googleusercontent.com",
       },
+      {
+        protocol: "https",
+        hostname: "platform-lookaside.fbsbx.com",
+      },
     ],
 
     // sets the Content-Disposition header (inline or attachment)
@@ -22,4 +26,9 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+const withNextIntl = require("next-intl/plugin")(
+  // This is the default (also the `src` folder is supported out of the box)
+  "./i18n.ts"
+);
+
+module.exports = withNextIntl(nextConfig);

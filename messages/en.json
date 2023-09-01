@@ -1,0 +1,18 @@
+{
+    "Home": {
+        "title": "Unleash Your inner Athlete",
+        "desc": " The FitPulse gives you access to over 1300 exercises with individual exercise data and animated demonstrations.",
+        "alerts": {
+            "development": "This Website Is Currently Under Development"
+        }
+    },
+    "global": {
+        "Home": "Home",
+        "Equipment": "Equipment",
+        "Muscles": "Muscles",
+        "lang": "lang",
+        "ContactUs": "Contact us",
+        "FitPulse": "FitPulse",
+        "Exercises": "Exercises"
+    }
+}

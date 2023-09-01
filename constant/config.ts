@@ -2,11 +2,12 @@ import { HeaderConfig as HeaderConfigType, exercise } from "@/types";
 
 export const HeaderConfig: RequestInit = {
   headers: {
-    "X-RapidAPI-Key": process.env.XRapidAPIKey || "",
-    "X-RapidAPI-Host": process.env.XRapidAPIHost || "",
+    "X-RapidAPI-Key": process.env.XRapidAPIKey as string,
+    "X-RapidAPI-Host": process.env.XRapidAPIHost as string,
   },
 };
-export const someOfData: exercise[] = [
+
+export const GetMuscles = [
   {
     bodyPart: "back 1",
     gifUrl: "/images/s6fIeHq0b5EuGl.gif",
@@ -14,6 +15,7 @@ export const someOfData: exercise[] = [
     id: "1",
     target: "back end ",
     name: "swap",
+    Loved: true,
   },
   {
     bodyPart: "back 2",
@@ -22,6 +24,7 @@ export const someOfData: exercise[] = [
     id: "2",
     target: "back end ",
     name: "swap",
+    Loved: true,
   },
   {
     bodyPart: "back 3",
@@ -30,6 +33,7 @@ export const someOfData: exercise[] = [
     id: "3",
     target: "back end ",
     name: "swap",
+    Loved: true,
   },
   {
     bodyPart: "back 4",
@@ -38,6 +42,7 @@ export const someOfData: exercise[] = [
     id: "4",
     target: "back end ",
     name: "swap",
+    Loved: false,
   },
   {
     bodyPart: "back5 ",
@@ -46,6 +51,7 @@ export const someOfData: exercise[] = [
     id: "5",
     target: "back end ",
     name: "swap",
+    Loved: false,
   },
   {
     bodyPart: "back 6",
@@ -95,6 +101,8 @@ export const someOfData: exercise[] = [
     target: "back end ",
     name: "swap",
   },
+];
+export const someOfData: exercise[] = [
   {
     bodyPart: "back",
     gifUrl: "/images/s6fIeHq0b5EuGl.gif",
@@ -304,3 +312,30 @@ export const someOfData: exercise[] = [
     name: "swap",
   },
 ];
+type ImageOfTargetMusclesType = {
+  [key: string]: string;
+};
+export const ImageOfTargetMuscles: ImageOfTargetMusclesType = {
+  abductors: "this url",
+  abs: "",
+  adductors: "",
+  biceps: "",
+  calves: "",
+  "cardiovascular system": "",
+  delts: "",
+  forearms: "",
+  glutes: "",
+  hamstrings: "",
+  lats: "",
+  "levator scapulae": "done",
+  pectorals: "",
+  quads: "",
+  "serratus anterior": "",
+  spine: "",
+  traps: "",
+  triceps: "",
+  "upper back": "",
+};
+export const getImageOfTargetMuscles = (target: string) => {
+  return ImageOfTargetMuscles[target];
+};

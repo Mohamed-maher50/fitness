@@ -9,7 +9,6 @@ const page = () => {
   const handleOnSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const res = await signIn("credentials", { ...formData, redirect: false });
-    console.log(res);
   };
 
   return (

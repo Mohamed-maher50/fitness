@@ -2,8 +2,9 @@ import NextAuth, { AuthOptions } from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
+import FacebookProvider from "next-auth/providers/facebook";
 
-export const authOptions: AuthOptions = {
+const authOptions = {
   // Configure one or more authentication providers
   providers: [
     GithubProvider({
@@ -13,6 +14,11 @@ export const authOptions: AuthOptions = {
     GoogleProvider({
       clientId: process.env.GOOGLE_ID as string,
       clientSecret: process.env.GOOGLE_SECRET as string,
+    }),
+
+    FacebookProvider({
+      clientId: process.env.FACBOOK_ID as string,
+      clientSecret: process.env.FACBOOK_SECRET as string,
     }),
     CredentialsProvider({
       name: "Credentials",
@@ -29,12 +35,6 @@ export const authOptions: AuthOptions = {
       },
     }),
   ],
-  session: {
-    strategy: "jwt",
-  },
-  pages: {
-    signIn: "/auth/sign",
-  },
 };
 
 const handler = NextAuth(authOptions);

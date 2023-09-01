@@ -3,16 +3,14 @@ import React, { FC, useMemo, useState } from "react";
 import "./Pagination.css";
 interface Props {
   buttonNumber: number;
-  PrevCb?: (page: number) => void;
-  nextCb?: (page: number) => void;
+  onChange: (index: number) => void;
   className?: string;
   nextIcon?: React.ReactNode | React.ReactElement;
   prevIcon?: React.ReactNode | React.ReactElement;
 }
 
 const Pagination: FC<Props> = ({
-  PrevCb,
-  nextCb,
+  onChange,
   buttonNumber,
   nextIcon,
   prevIcon,
@@ -27,8 +25,7 @@ const Pagination: FC<Props> = ({
   }, [buttonNumber]);
 
   const handlePrev = () => {
-    console.log(page);
-    nextCb && nextCb(page - 1);
+    onChange && onChange(page - 1);
     if (page <= 0) return;
 
     setPage((prev) => {
@@ -36,7 +33,7 @@ const Pagination: FC<Props> = ({
     });
   };
   const handleNext = () => {
-    nextCb && nextCb(page + 1);
+    onChange && onChange(page + 1);
     if (page > buttonNumber - 1) return;
 
     setPage((prev) => {
@@ -68,7 +65,7 @@ const Pagination: FC<Props> = ({
     <div className={`flex gap   pagination ${className || className}`}>
       <button
         onClick={() => {
-          nextCb && nextCb(page);
+          onChange && onChange(page);
           setPage(0);
         }}
         className="btn"
@@ -84,7 +81,7 @@ const Pagination: FC<Props> = ({
             key={+btn}
             onClick={() => {
               setPage(btn);
-              nextCb && nextCb(btn);
+              onChange && onChange(btn);
             }}
             className={`${btn == page ? "active" : ""}`}
           >
@@ -101,7 +98,7 @@ const Pagination: FC<Props> = ({
       </button>
       <button
         onClick={() => {
-          nextCb && nextCb(page);
+          onChange && onChange(page);
           setPage(buttons.length - 1);
         }}
         className="btn"

@@ -13,10 +13,12 @@ export const getExercises = async () => {
 };
 
 export const getExerciseById = async (id: number | string) => {
-  const res = await fetch(
-    `https://exercisedb.p.rapidapi.com/exercises/exercise/${id}`,
-    { ...HeaderConfig, cache: "no-cache" }
-  );
+  // https://exercisedb.p.rapidapi.com/exercises/exercise/${id}
+  const res = await fetch(`http://localhost/api/exercises/${id}`, {
+    ...HeaderConfig,
+    cache: "no-cache",
+  });
+
   if (!res.ok) notFound();
 
   const data = await res.json();

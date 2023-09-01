@@ -1,32 +1,37 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import { GiMailbox, GiWolfHead } from "react-icons/gi";
 import { AiOutlineGithub, AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
+import { useTranslations } from "next-intl";
+
 const Footer = () => {
+  const t = useTranslations("global");
+
   return (
-    <footer className="w-full pt-6">
-      <section className="container grid md:grid-cols-3 mx-auto py-6  text-white ">
+    <footer className="w-full pt-6 text-primary-content  bg-neutral">
+      <section className="container grid md:grid-cols-3 mx-auto py-6  ">
         <ul className="p-0">
           <li className="p-2 border-b-2 border-red-400">
-            <Link href={"/"} className=" flex items-center text-white  text-xl">
+            <Link href={"/"} className=" flex items-center  text-xl">
               <GiWolfHead className={"text-red-500 text-6xl  w-fit"} />
-              FitPulse
+              {t("FitPulse")}
             </Link>
           </li>
           <li className="p-2  border-b-2 border-red-400">
-            <Link href={"/"}>Exercises</Link>
+            <Link href={"/"}>{t("Exercises")}</Link>
           </li>
           <li className="p-2  border-b-2 border-red-400">
-            <Link href={"/equipment"}>Equipment</Link>
+            <Link href={"/equipment"}>{t("Equipment")}</Link>
           </li>
           <li className="p-2 border-b-2 border-red-400">
-            <Link href={"/muscles"}>Muscles</Link>
+            <Link href={"/muscles"}> {t("Muscles")}</Link>
           </li>
         </ul>{" "}
         <div></div>
-        <div className="text-white  flex flex-col gap-y-3">
+        <div className="  flex flex-col gap-y-3">
           <h2 className="text-red-400 text-lg underline underline-offset-4">
-            Contact us
+            {t("ContactUs")}
           </h2>
           <div className="flex items-center h-fit gap-x-3">
             <AiOutlineMail />
@@ -35,7 +40,7 @@ const Footer = () => {
           <Link
             target="_blank"
             href={"https://github.com/Mohamed-maher50/"}
-            className="flex items-center h-fit gap-x-3"
+            className="flex text-inherit items-center h-fit gap-x-3"
           >
             <AiOutlineGithub />
             <span>Mohamed-maher50</span>

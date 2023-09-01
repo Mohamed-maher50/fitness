@@ -1,7 +1,6 @@
 import { HeaderConfig } from "@/constant/config";
 
 export const getEquipment = async (query?: string | undefined) => {
-  console.log(query);
   const response = await fetch(
     `https://exercisedb.p.rapidapi.com/exercises/equipment/${
       query || "assisted"

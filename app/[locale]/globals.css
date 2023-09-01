@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.__hero {
-  background-image: linear-gradient(to right, black 10%, transparent),
-    url("../public/images/hero1.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
 .loading_animation * {
   animation: loading 0.5s ease-in both;
   -webkit-animation: loading 0.5s ease-in both;
@@ -29,4 +22,7 @@
     -ms-transform: scaleX(1);
     -o-transform: scaleX(1);
   }
+}
+section {
+  @apply pt-20;
 }

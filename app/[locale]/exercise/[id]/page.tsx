@@ -8,6 +8,7 @@ interface Props {
 
 const page: FC<Props> = async ({ params: { id } }) => {
   const exercise = await getExerciseById(id);
+
   return (
     <div className="pt-24 container mx-auto text-white   ">
       <article className="grid md:grid-cols-2 p-2 rounded-md overflow-hidden shadow-md  bg-gray-100 ">
